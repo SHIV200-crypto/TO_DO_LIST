@@ -3,19 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Just Do It - Focus. Achieve. Repeat.</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="CSS/main.css">
+    
+    <title>Just Do It</title>
 </head>
 <body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Enter a task">
-            <button type="submit">Add</button>
-        </form>
-        <ul id="todo-list"></ul>
-    </div>
 
-    <script src="script.js"></script>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">JUST DO IT</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#todo">Try Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stop Planning.<br>Start <span class="highlight">Doing</span>.</h1>
+            <p>The beautiful To-Do List that actually helps you get things done.</p>
+            <button class="cta-button" onclick="document.getElementById('todo').scrollIntoView({ behavior: 'smooth' })">
+                Try It Now — It's Free
+            </button>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why Just Do It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Lightning Fast</h3>
+                <p>Add, complete, and delete tasks instantly.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-palette"></i>
+                <h3>Stunning Themes</h3>
+                <p>Switch between 3 elegant themes instantly.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-save"></i>
+                <h3>Auto Save</h3>
+                <p>Your tasks are saved automatically.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- To-Do App Section -->
+    <section class="todo-section" id="todo">
+        <h2 class="section-title">Try Just Do It Now</h2>
+        
+        <div class="todo-container">
+            <!-- To-Do App will be injected here via JS -->
+            <div id="app-header">
+                <div class="theme-switcher">
+                    <div class="standard-theme theme-btn active" onclick="setTheme('standard')"></div>
+                    <div class="light-theme theme-btn" onclick="setTheme('light')"></div>
+                    <div class="darker-theme theme-btn" onclick="setTheme('darker')"></div>
+                </div>
+                <h1 id="title">Just do it.</h1>
+            </div>
+
+            <div id="form">
+                <form id="todo-form">
+                    <input type="text" class="todo-input" id="todo-input" placeholder="Add a task..." autocomplete="off">
+                    <button type="submit" class="todo-btn">I Got This!</button>
+                </form>
+            </div>
+
+            <div class="datetime-container">
+                <span id="datetime"></span>
+            </div>
+
+            <ul class="todo-list" id="todo-list"></ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Just Do It • Built to help you actually get things done</p>
+    </footer>
+
+    <script src="JS/main.js"></script>
 </body>
 </html>
